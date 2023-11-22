@@ -1,0 +1,23 @@
+cuda: false
+predict: false
+
+input:
+  data_path: null
+  embed_file: ""                  # pre-trained representations
+  snapshot: ""                    # filename of model snapshot
+
+output:
+  save_path: "./cnn_model.pt"
+
+hyperparameters:
+  nuc: False                      # nucletide-based model
+  labels: 1                       # 1 for regression tasks, > 1 for classification tasks
+  lr: 0.001                     # initial learning rate
+  epochs: 256
+  batch_size: 64
+  dropout: 0.5
+  embed_dim: 128
+  kernel_num: 100               # number of each kind of kernel
+  kernel_sizes: [3, 4, 5]
+  max_len: 0                    # maximum sequence length. No constraint if -1
+  static: false                 # fix the embedding

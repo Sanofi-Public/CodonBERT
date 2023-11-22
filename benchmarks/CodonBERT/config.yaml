@@ -1,0 +1,18 @@
+eval:
+  model_dir: ""
+  data_path: ""
+  max_length: 1024
+  hidden_size: 768
+  inter_size: 3072
+  num_heads: 12
+  num_layers: 12
+  bs_train: 32
+  bs_test: 32
+  log_steps: 320
+  save_steps: 320
+  num_epoches: 10
+embed:
+  data_path: ""
+  model_dir: ""
+  output_path: ""
+  max_length: 1024
