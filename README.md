@@ -13,8 +13,8 @@ Ensure you have CUDA drivers if you plan on using a GPU.
 
 ## CodonBERT
 
-The CodonBERT Pytorch model can be downloaded [here](https://cdn.prod.accelerator.sanofi/llm/CodonBERT.zip). The artifact is under a [license](LICENSE.md).
-
+The CodonBERT Pytorch model can be downloaded [here](https://cdn.prod.accelerator.sanofi/llm/CodonBERT.zip). The artifact is under a [license](ARTIFACT_LICENSE.md).
+The code and repository are under a [software license](SOFTWARE_LICENSE.md).
 
 To extract embeddings from the model, use [extract_embed.py](benchmarks/CodonBERT/extract_embed.py).
 
