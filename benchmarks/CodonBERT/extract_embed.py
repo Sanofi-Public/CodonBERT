@@ -38,7 +38,7 @@ def main(cfg):
         with torch.no_grad():
             outputs = model(input_ids, labels=input_ids, output_hidden_states=True)
             _, _, hidden_states = outputs[:3]
-            output_embeds = torch.squeeze(hidden_states[0])
+            output_embeds = torch.squeeze(hidden_states[-1])
             data.append(output_embeds.cpu().numpy()[1:-1].tolist())
 
     print(f"saving to {cfg.embed.output_path}")
