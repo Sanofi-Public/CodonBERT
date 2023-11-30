@@ -21,3 +21,4 @@ hyperparameters:
   kernel_sizes: [3, 4, 5]
   max_len: 0                    # maximum sequence length. No constraint if -1
   static: false                 # fix the embedding
+  vocab_size: -1

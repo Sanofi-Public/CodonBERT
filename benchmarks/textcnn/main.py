@@ -1,12 +1,13 @@
+import sys
+
 import hydra
+import model
 import numpy as np
 import pandas as pd
 import torch
+import train
 from Bio import SeqIO
 from sklearn.model_selection import train_test_split
-
-import model
-import train
 
 sys.path.append("..")
 from utils.tokenizer import mytok
@@ -109,7 +110,7 @@ def wrap_data(X_train, y_train, X_valid, y_valid, X_test, y_test, pre_embed):
     return train_iter, dev_iter, test_iter
 
 
-def build_vob(s):
+def build_voc(s):
     """
     Creates a vocabulary dictionary based on the step size.
     Args:
@@ -148,8 +149,8 @@ def main(cfg):
 
         ### build vocabulary
         pre_embed = False
-        kmer_size = 1 if cfg.settings.nuc else 3
-        voc_dict = build_vob(kmer_size)
+        kmer_size = 1 if cfg.hyperparameters.nuc else 3
+        voc_dict = build_voc(kmer_size)
         cfg.hyperparameters.vocab_size = len(voc_dict)
         X = []
         for seq in seqs:
@@ -220,7 +221,7 @@ def main(cfg):
 
         ### tokenization
         kmer_size = 1 if cfg.hyperparameters.nuc else 3
-        voc_dict = build_vob(kmer_size)
+        voc_dict = build_voc(kmer_size)
         cfg.hyperparameters.vocab_size = len(voc_dict)
         X = []
         for seq in seqs:
