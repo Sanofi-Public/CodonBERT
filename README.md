@@ -27,6 +27,16 @@ Edit `main.py` to point to the desired embeddings and run `python main.py` to tr
 ## Example Notebooks
 The [notebooks](notebooks/) folder contains walkthrough Jupyter notebooks for benchmarking the TFIDF model as well as the TextCNN model with a pre-trained word2vec embedding representation. These use [datamodel_mRFP](datamodel_mRFP.csv) as a test dataset.
 
+## Data
+As part of the release, we are sharing an [internal dataset](benchmarks/CodonBERT/data/MLOS.csv). Additionally, the data from other published datasets mentioned in the paper that were used for benchmarking are also included.
+
+- [mRFP Expression.csv](benchmarks/CodonBERT/data/mRFP%20Expression.csv) is from [Revealing determinants of translation efficiency via whole-gene codon randomization and machine learning](https://academic.oup.com/nar/article/51/5/2363/7016452)
+- [Fungal expression.csv](benchmarks/CodonBERT/data/Fungal%20expression.csv) is from [Kingdom-Wide Analysis of Fungal Protein-Coding and tRNA Genes Reveals Conserved Patterns of Adaptive Evolution](https://academic.oup.com/mbe/article/39/2/msab372/6513383)
+- [E.Coli proteins.csv](benchmarks/CodonBERT/data/E.Coli%20proteins.csv) is from [MPEPE, a predictive approach to improve protein expression in E. coli based on deep learning](https://www.sciencedirect.com/science/article/pii/S2001037022000745)
+- [Tc-Riboswitches.csv](benchmarks/CodonBERT/data/Tc-Riboswitches.csv) is from [Tuning the Performance of Synthetic Riboswitches using Machine Learning](https://pubs.acs.org/doi/10.1021/acssynbio.8b00207)
+- [mRNA stability 1.csv](benchmarks/CodonBERT/data/mRNA%20stability%201.csv) and [2](benchmarks/CodonBERT/data/mRNA%20stability%202.csv) are from [iCodon customizes gene expression based on the codon composition](https://www.nature.com/articles/s41598-022-15526-7)
+- [CoV2 Vaccine.csv](benchmarks/CodonBERT/data/CoV2%20Vaccine.csv) is from [Deep learning models for predicting RNA degradation via dual crowdsourcing](https://www.nature.com/articles/s42256-022-00571-8)
+
 ## Citations
 If you find the model useful in your research, please cite our paper:
 ```bibtex
