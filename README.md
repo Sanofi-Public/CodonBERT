@@ -16,6 +16,8 @@ Ensure you have CUDA drivers if you plan on using a GPU.
 The CodonBERT Pytorch model can be downloaded [here](https://cdn.prod.accelerator.sanofi/llm/CodonBERT.zip). The artifact is under a [license](ARTIFACT_LICENSE.md).
 The code and repository are under a [software license](SOFTWARE_LICENSE.md).
 
+Pretraining and finetuning scripts are under [benchmarks/CodonBERT](benchmarks/CodonBERT). To run finetuning, the `--task` flag must be used.
+
 To extract embeddings from the model, use [extract_embed.py](benchmarks/CodonBERT/extract_embed.py).
 
 The dataset [sample.fasta](benchmarks/CodonBERT/data/sample.fasta) is included for reference.
