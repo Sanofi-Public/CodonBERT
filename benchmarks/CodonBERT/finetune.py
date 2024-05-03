@@ -56,20 +56,23 @@ task_name = args.task.lower()
 
 if "rfp" in task_name:
     task_name = "mRFP Expression"
-    data_path = "data/mRFP Expression.csv"
+    data_path = "data/mRFP_Expression.csv"
 elif "coli" in task_name:
     task_name = "E.Coli proteins"
     num_of_labels = 3
-    data_path = "data/E.Coli proteins.csv"
+    data_path = "data/E.Coli_proteins.csv"
 elif "fungal" in task_name:
     task_name = "Fungal expression"
-    data_path = "data/Fungal expression.csv"
+    data_path = "data/Fungal_expression.csv"
 elif "ribo" in task_name:
     task_name = "Tc-Riboswitches"
     data_path = "data/Tc-Riboswitches.csv"
 elif "stab" in task_name:
     task_name = "mRNA Stability"
-    data_path = "data/mRNA Stability 1.csv"
+    data_path = "data/mRNA_Stability.csv"
+elif "cov" in task_name:
+    task_name = "CoV Vaccine Degradation"
+    data_path = "data/CoV_Vaccine_Degradation.csv"
 else:
     print("please provide an valid task name from: cov, rfp, coli, fungal, mlos, ribo")
     exit(0)
@@ -104,13 +107,14 @@ def mytok(seq, kmer_len, s):
     return kmer_list
 
 
-def load_data_from_csv(data_path):  # TODO: load compete dataset
+def load_data_from_csv(data_path, split):  # TODO: load compete dataset
     seqs = []
     ys = []
 
     skipped = 0
     df = pandas.read_csv(data_path)
     df = df.loc[df['Dataset'] == task_name]
+    df = df.loc[df['Split'] == split]
 
     raw_seqs = df["Sequence"]
     raw_ys = df["Value"]
@@ -133,15 +137,9 @@ def load_data_from_csv(data_path):  # TODO: load compete dataset
 
 
 def build_dataset(data_path):
-    # seqs, ys = load_data_from_fasta(data_path)
-    seqs, ys = load_data_from_csv(data_path)
-    # data split
-    if num_of_labels > 1:
-        X_train, X_rest, y_train, y_rest = train_test_split(seqs, ys, test_size=0.3, random_state=args.random, stratify=ys) # random_state=42
-        X_eval, X_test, y_eval, y_test = train_test_split(X_rest, y_rest, test_size=0.5, random_state=args.random, stratify=y_rest)
-    else:
-        X_train, X_rest, y_train, y_rest = train_test_split(seqs, ys, test_size=0.3, random_state=args.random)  # random_state=42
-        X_eval, X_test, y_eval, y_test = train_test_split(X_rest, y_rest, test_size=0.5, random_state=args.random)
+    X_train, y_train = load_data_from_csv(data_path, "train")
+    X_eval, y_eval = load_data_from_csv(data_path, "val")
+    X_test, y_test = load_data_from_csv(data_path, "test")
 
     print("data size:", len(X_train), len(X_eval), len(X_test))
 

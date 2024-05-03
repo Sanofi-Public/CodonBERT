@@ -22,7 +22,7 @@ def mytok(seq, kmer_len, s):
 
 def get_tokenizer():
     """Create tokenizer."""
-    lst_ele = list("AUGCN")
+    lst_ele = list("AUGC")
     lst_voc = ["[PAD]", "[UNK]", "[CLS]", "[SEP]", "[MASK]"]
     for a1 in lst_ele:
         for a2 in lst_ele:
