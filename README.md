@@ -32,6 +32,7 @@ As part of the release, we are sharing an [internal dataset](benchmarks/CodonBER
 - [Tc-Riboswitches.csv](benchmarks/CodonBERT/data/fine-tune/Tc-Riboswitches.csv) is from [Tuning the Performance of Synthetic Riboswitches using Machine Learning](https://pubs.acs.org/doi/10.1021/acssynbio.8b00207)
 - [mRNA_Stability.csv](benchmarks/CodonBERT/data/fine-tune/mRNA_Stability.csv) are from [iCodon customizes gene expression based on the codon composition](https://www.nature.com/articles/s41598-022-15526-7)
 - [CoV_Vaccine_Degradation.csv](benchmarks/CodonBERT/data/fine-tune/CoV_Vaccine_Degradation.csv) is from [Deep learning models for predicting RNA degradation via dual crowdsourcing](https://www.nature.com/articles/s42256-022-00571-8)
+  - The average of the deg_Mg_50C values at each nucleotide is treated as the sequence-level target. Deg_Mg_50C has the highest correlation with other labels, including deg_pH10, deg_Mg_pH10, and deg_50C.
 
 ## TextCNN
 Code for training the TextCNN model is in the [textcnn](benchmarks/textcnn/) directory.
