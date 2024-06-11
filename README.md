@@ -33,7 +33,7 @@ Edit `main.py` to point to the desired embeddings and run `python main.py` to tr
 The [notebooks](notebooks/) folder contains walkthrough Jupyter notebooks for benchmarking the TFIDF model as well as the TextCNN model with a pre-trained word2vec embedding representation. These use [datamodel_mRFP](datamodel_mRFP.csv) as a test dataset.
 
 ## Data
-As part of the release, we are sharing an [internal dataset](benchmarks/CodonBERT/data/pre-train/MLOS.csv). Additionally, the data from other published datasets mentioned in the paper that were used for benchmarking are also included.
+As part of the release, we are sharing an [internal dataset](benchmarks/CodonBERT/data/fine-tune/MLOS.csv). Additionally, the data from other published datasets mentioned in the paper that were used for benchmarking are also included.
 
 - [mRFP_Expression.csv](benchmarks/CodonBERT/data/fine-tune/mRFP_Expression.csv) is from [Revealing determinants of translation efficiency via whole-gene codon randomization and machine learning](https://academic.oup.com/nar/article/51/5/2363/7016452)
 - [Fungal_expression.csv](benchmarks/CodonBERT/data/fine-tune/Fungal_expression.csv) is from [Kingdom-Wide Analysis of Fungal Protein-Coding and tRNA Genes Reveals Conserved Patterns of Adaptive Evolution](https://academic.oup.com/mbe/article/39/2/msab372/6513383)
