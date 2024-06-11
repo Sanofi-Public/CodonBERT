@@ -21,7 +21,7 @@ Pretraining and finetuning scripts are under [benchmarks/CodonBERT](benchmarks/C
 To extract embeddings from the model, use [extract_embed.py](benchmarks/CodonBERT/extract_embed.py). The dataset [sample.fasta](benchmarks/CodonBERT/data/sample.fasta) is included for reference.
 
 ## Dataset
-Pre-training dataset are under [benchmarks/CodonBERT/data/pre-train](benchmarks/CodonBERT/data/pre-train), [train_seqs_id_1.csv.zip](benchmarks/CodonBERT/data/pre-train/train_seqs_id_1.csv.zip) and [train_seqs_id_2.csv.zip](benchmarks/CodonBERT/data/pre-train/train_seqs_id_2.csv.zip) list the NCBI IDs for all 10 million sequences for pre-training. [train_samples.csv](benchmarks/CodonBERT/data/pre-train/train_samples.csv) provide a training sample. [eval.csv](benchmarks/CodonBERT/data/pre-train/eval.csv) stores the held-out dataset for evaluation. 
+Pre-training dataset are under [benchmarks/CodonBERT/data/pre-train](benchmarks/CodonBERT/data/pre-train), [train_seqs_id_1.csv.zip](benchmarks/CodonBERT/data/pre-train/train_seqs_id_1.csv.zip) and [train_seqs_id_2.csv.zip](benchmarks/CodonBERT/data/pre-train/train_seqs_id_2.csv.zip) list the NCBI IDs for all 10 million sequences for pre-training. [train_samples.csv](benchmarks/CodonBERT/data/pre-train/train_samples.csv) provides a training sample. [eval.csv](benchmarks/CodonBERT/data/pre-train/eval.csv) stores the held-out dataset for evaluation. 
 
 To run finetuning, the `--task` flag must be used. All downstream datasets are under [benchmarks/CodonBERT/data/fine-tune](benchmarks/CodonBERT/data/fine-tune). 
 
@@ -33,13 +33,13 @@ Edit `main.py` to point to the desired embeddings and run `python main.py` to tr
 The [notebooks](notebooks/) folder contains walkthrough Jupyter notebooks for benchmarking the TFIDF model as well as the TextCNN model with a pre-trained word2vec embedding representation. These use [datamodel_mRFP](datamodel_mRFP.csv) as a test dataset.
 
 ## Data
-As part of the release, we are sharing an [internal dataset](benchmarks/CodonBERT/data/MLOS.csv). Additionally, the data from other published datasets mentioned in the paper that were used for benchmarking are also included.
+As part of the release, we are sharing an [internal dataset](benchmarks/CodonBERT/data/pre-train/MLOS.csv). Additionally, the data from other published datasets mentioned in the paper that were used for benchmarking are also included.
 
 - [mRFP_Expression.csv](benchmarks/CodonBERT/data/fine-tune/mRFP_Expression.csv) is from [Revealing determinants of translation efficiency via whole-gene codon randomization and machine learning](https://academic.oup.com/nar/article/51/5/2363/7016452)
 - [Fungal_expression.csv](benchmarks/CodonBERT/data/fine-tune/Fungal_expression.csv) is from [Kingdom-Wide Analysis of Fungal Protein-Coding and tRNA Genes Reveals Conserved Patterns of Adaptive Evolution](https://academic.oup.com/mbe/article/39/2/msab372/6513383)
 - [E.Coli_proteins.csv](benchmarks/CodonBERT/data/fine-tune/E.Coli_proteins.csv) is from [MPEPE, a predictive approach to improve protein expression in E. coli based on deep learning](https://www.sciencedirect.com/science/article/pii/S2001037022000745)
 - [Tc-Riboswitches.csv](benchmarks/CodonBERT/data/fine-tune/Tc-Riboswitches.csv) is from [Tuning the Performance of Synthetic Riboswitches using Machine Learning](https://pubs.acs.org/doi/10.1021/acssynbio.8b00207)
-- [mRNA_stability.csv](benchmarks/CodonBERT/data/fine-tune/mRNA_stability.csv) are from [iCodon customizes gene expression based on the codon composition](https://www.nature.com/articles/s41598-022-15526-7)
+- [mRNA_Stability.csv](benchmarks/CodonBERT/data/fine-tune/mRNA_Stability.csv) are from [iCodon customizes gene expression based on the codon composition](https://www.nature.com/articles/s41598-022-15526-7)
 - [CoV_Vaccine_Degradation.csv](benchmarks/CodonBERT/data/fine-tune/CoV_Vaccine_Degradation.csv) is from [Deep learning models for predicting RNA degradation via dual crowdsourcing](https://www.nature.com/articles/s42256-022-00571-8)
 
 ## Citations
